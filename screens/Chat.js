@@ -1,7 +1,10 @@
 import React from 'react';
-import {SafeAreaView,ScrollView,View,Text,StyleSheet,TextInput} from 'react-native'
+import {SafeAreaView,ScrollView,View,Text,StyleSheet,TextInput,TouchableOpacity} from 'react-native'
 import Greetings from '../components/Greetings';
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign,Entypo } from '@expo/vector-icons';
+import Status from '../components/Status';
+import Feed from '../components/Feed';
+//import {Entypo} from '@expo/vector-icons'
 
 export default function Chat() {
     return (
@@ -19,6 +22,13 @@ export default function Chat() {
                             <TextInput placeholder="search friend" />
                         </View>
                     </View>
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
+                        <TouchableOpacity style={{marginLeft:20,marginTop:20,width:80,height:80,borderRadius:40,backgroundColor:"#fff",justifyContent:'center',alignItems:'center'}}>
+                            <Entypo name="plus" color="#ccc" size={20} />
+                        </TouchableOpacity>
+                        <Status/>
+                    </ScrollView>
+                    <Feed/>
                 </View>
             </ScrollView>
         </SafeAreaView>
